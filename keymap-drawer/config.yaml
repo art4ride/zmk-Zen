@@ -1,0 +1,283 @@
+# configuration for https://github.com/caksoylar/keymap-drawer
+draw_config:
+  svg_style: |
+    /* inherit to force styles through use tags*/
+    svg path {
+        fill: inherit;
+    }
+    /* font and background color specifications */
+    svg.keymap {
+        font-family: 'Fira Mono','SF Mono', SFMono-Regular, ui-monospace, Liberation Mono, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
+        font-size: 16px;
+        font-kerning: normal;
+        text-rendering: optimizeLegibility;
+        fill: #24292e;
+    }
+
+    /* default key styling */
+    rect.key {
+        fill: #f6f8fa;
+        stroke: #c9cccf;
+        stroke-width: 1;
+    }
+
+    /* default key side styling, only used is draw_key_sides is set */
+    rect.side {
+        filter: brightness(90%);
+    }
+
+    /* color accent for combo boxes */
+    rect.combo {
+        fill: #cdf;
+    }
+
+    /* color accent for held keys */
+    rect.held, rect.combo.held {
+        fill: #fdd;
+    }
+
+    /* color accent for ghost (optional) keys */
+    rect.ghost, rect.combo.ghost {
+        stroke-dasharray: 4, 4;
+        stroke-width: 2;
+    }
+
+    text {
+        text-anchor: middle;
+        dominant-baseline: middle;
+    }
+
+    /* styling for layer labels */
+    text.label {
+        font-weight: bold;
+        text-anchor: start;
+        stroke: white;
+        stroke-width: 2;
+        paint-order: stroke;
+    }
+
+    /* styling for combo tap, and key hold/shifted label text */
+    text.combo, text.hold, text.shifted {
+        font-size: 12px;
+    }
+
+    text.hold {
+        text-anchor: middle;
+        dominant-baseline: auto;
+    }
+
+    text.shifted {
+        text-anchor: middle;
+        dominant-baseline: hanging;
+    }
+
+    /* styling for hold/shifted label text in combo box */
+    text.combo.hold, text.combo.shifted {
+        font-size: 8px;
+    }
+
+    /* lighter symbol for transparent keys */
+    text.trans {
+        fill: #7b7e81;
+    }
+
+    /* styling for combo dendrons */
+    path.combo {
+        stroke-width: 1;
+        stroke: gray;
+        fill: none;
+    }
+
+    g.combo.tab {
+      transform: translate(16px, 0);
+    }
+    g.combo.bspc {
+      transform: translate(-16px, 0);
+    }
+    g.combo.capsw {
+      transform: scale(0.9, 1) translate(46px, 0);
+    }
+    g.combo.chglen {
+      transform: scale(0.91, 1) translate(41px, 0);
+    }
+
+    /* Start Tabler Icons Cleanup */
+    /* cannot use height/width with glyphs */
+    .icon-tabler > path {
+        fill: inherit;
+        stroke: inherit;
+    }
+    /* hide tabler's default box */
+    .icon-tabler > path[stroke="none"][fill="none"] {
+        visibility: collapse;
+    }
+    /* End Tabler Icons Cleanup */
+parse_config:
+  raw_binding_map:
+    '&reset': Reset
+    '&sys_reset': Reset
+    '&bootloader': Boot
+    '&swapper': Win Next
+    '&caps_word': Caps Wrd
+    '&chg_ln': Chg Lng
+    '&inv_qm': ¿
+    '&dqt_ex': '"!'
+    '&cm_qmk': ',?'
+    '&dt_grv': '.`'
+    '&sqt_tl': "'~"
+    '&bkt': "()"
+
+    '&out OUT_USB': Out USB
+    '&out OUT_BLE': Out BLE
+
+    '&bt BT_SEL 0': BT 1
+    '&bt BT_SEL 1': BT 2
+    '&bt BT_SEL 2': BT 3
+    '&bt BT_SEL 3': BT 4
+    '&bt BT_SEL 4': BT 5
+
+    '&mmv M_UP': M↑
+    '&mmv M_DOWN': M↓
+    '&mmv M_LEFT': M←
+    '&mmv M_RIGHT': M→
+
+    '&mwh S_UP': MW↑
+    '&mwh S_DOWN': MW↓
+    '&mwh S_LEFT': MW←
+    '&mwh S_RIGHT': MW→
+
+    '&mkp LCLK': Left Click
+    '&mkp RCLK': Right Click
+    '&mkp MCLK': Middle Click
+    '&mkp MB4': Back Click
+    '&mkp MB5': Forward Click
+
+  zmk_combos:
+    combo_tab:    {align: top, o: 1.15, type: "tab"}
+    combo_bspc:   {align: top, o: 1.15, type: "bspc"}
+    combo_capswd: {align: top, type: "capsw"}
+    combo_chg_ln: {align: top, o: 0.35, type: "chglen"}
+    combo_f12:    {align: bottom}
+    combo_btclr:  {align: bottom}
+
+  zmk_keycode_map:
+    # custom mappings
+    # ✂
+    # ✄
+    # ⎗
+    # ⎘
+    LA(LEFT): Wd←
+    LA(RIGHT): Wd→
+    LA(UP): Mv↑
+    LA(DOWN): Mv↓
+    LC(LG(LEFT)): Desk Left
+    LC(LG(RIGHT)): Desk Right
+    LC(TAB): Tab Left
+    LC(LS(TAB)): Tab Right
+    LA(F4): Win Close
+    LC(F4): Tab Close
+    C_VOL_UP: Vol Up
+    C_VOL_DN: Vol Down
+    C_AL_CALC: Calc
+    C_PP: Play Pause
+    LS(TAB): Win Prev
+    LS(INS): Paste
+
+    LCTRL: ⌃
+    RCTRL: ⌃
+    LALT: ⌥
+    RALT: ⎇
+    LGUI: ⌘
+    RGUI: ⌘
+    LSHFT: ⇧
+    RSHFT: ⇧
+    ESC: ⎋
+    SPACE: ␣
+    BSPC: ⌫
+    RET: ⏎
+    TAB: ↹
+    DEL: ⌦
+
+    PG_UP: ⇞
+    PG_DN: ⇟
+    INS: Insert
+    HOME: ↖
+    END: ↘
+    CAPS: ⇪
+    PSCRN: ⎙
+    PAUSE_BREAK: Pause Break
+
+    UP: ↑
+    DOWN: ↓
+    LEFT: ←
+    RIGHT: →
+
+    C_PP: ⏯
+    C_NEXT: ⏭
+    C_PREV: ⏮
+
+    # defaults
+    AMPERSAND: '&'
+    AMPS: '&'
+    APOS: .
+    APOSTROPHE: <
+    ASTERISK: '*'
+    ASTRK: '*'
+    AT: '@'
+    AT_SIGN: '@'
+    BACKSLASH: \
+    BSLH: \
+    CARET: ^
+    COLON: ':'
+    COMMA: ','
+    DLLR: $
+    DOLLAR: $
+    DOT: .
+    DOUBLE_QUOTES: '"'
+    DQT: '"'
+    EQUAL: '='
+    EXCL: '!'
+    EXCLAMATION: '!'
+    FSLH: /
+    GRAVE: '`'
+    GREATER_THAN: '>'
+    GT: '>'
+    HASH: '#'
+    LBKT: '['
+    LBRC: '{'
+    LEFT_BRACE: '{'
+    LEFT_BRACKET: '['
+    LEFT_PARENTHESIS: (
+    LESS_THAN: <
+    LPAR: (
+    LT: <
+    MINUS: '-'
+    NON_US_BACKSLASH: \
+    NON_US_BSLH: '|'
+    NON_US_HASH: '#'
+    NUHS: '#'
+    PERCENT: '%'
+    PERIOD: .
+    PIPE: '|'
+    PIPE2: '|'
+    PLUS: +
+    POUND: '#'
+    PRCNT: '%'
+    QMARK: '?'
+    QUESTION: '?'
+    RBKT: ']'
+    RBRC: '}'
+    RIGHT_BRACE: '}'
+    RIGHT_BRACKET: ']'
+    RIGHT_PARENTHESIS: )
+    RPAR: )
+    SEMI: ;
+    SEMICOLON: ;
+    SINGLE_QUOTE: ''''
+    SLASH: /
+    SQT: ''''
+    STAR: '*'
+    TILDE: '~'
+    TILDE2: '~'
+    UNDER: _
+    UNDERSCORE: _

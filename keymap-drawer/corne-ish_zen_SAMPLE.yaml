@@ -1,0 +1,136 @@
+layers:
+  QWERTY: [↹, Q, W, E, R, T, Y, U, I, O, P, BKSP, ⌥, A, S, D, F, G, H, J, K, L, QUOT, ENTER, ⇧, Z, X, C, V, B, N, M, CMMA, ., /, RSFT, ⌘, LCTL, NUMROW, SPC, ADJUST,
+    F13]
+  GAMING: [↹, Q, W, E, R, T, Y, U, I, O, P, BKSP, ⌥, A, S, D, F, G, H, J, K, L, QUOT, ENTER, ⇧, Z, X, C, V, B, N, M, CMMA, ., /, RSFT, LCTL, NUMROW, SPC, SPC, ADJUST,
+    F13]
+  NUMPAD: [↹, '', '', '', '', '', KP EQUAL, KP 7, KP 8, KP 9, KP MINUS, ⌫, KP NLCK, '', '', '', '', '', KP ASTERISK, KP 4, KP 5, KP 6, KP PLUS, '', NUMPAD, '', '',
+    '', '', '', KP SLASH, KP 1, KP 2, KP 3, KP ENTER, '', CONFIG, LCTL, NUMROW, SPC, KP 0, KP DOT]
+  NUMROW:
+  - ⎋
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - ⌦
+  - '`'
+  - ''
+  - ''
+  - ⎙
+  - '-'
+  - '='
+  - ←
+  - ↓
+  - ↑
+  - →
+  - ;
+  - ''
+  - ''
+  - ''
+  - ''
+  - \
+  - '['
+  - ']'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - CONFIG
+  - LCTL
+  - {t: NUMROW, type: held}
+  - SPC
+  - ADJUST
+  - F13
+  ADJUST:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - F11
+  - F12
+  - ⇪
+  - Insert
+  - ↖
+  - ⇞
+  - ''
+  - ''
+  - ←
+  - ↓
+  - ↑
+  - →
+  - ''
+  - ''
+  - NUMPAD
+  - ⌦
+  - ↘
+  - ⇟
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ⌘
+  - LCTL
+  - NUMROW
+  - SPC
+  - {t: ADJUST, type: held}
+  - GAMING
+  CONFIG:
+  - Reset
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - BT CLR
+  - BT 1
+  - BT 2
+  - BT 3
+  - BT 4
+  - BT 5
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: CONFIG, type: held}
+  - LCTL
+  - NUMROW
+  - SPC
+  - ADJUST
+  - F13
